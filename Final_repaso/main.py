@@ -25,7 +25,7 @@ bank.clients_append(client6)
 def main():
     while True:
         print(const.MAIN_INP)
-        inp = input(": ")
+        inp = input("")
         if inp == 'a':
             bank.show_queue()
             ft.return_menu()
