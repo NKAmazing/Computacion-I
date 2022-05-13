@@ -131,3 +131,4 @@ dmypy.json
 queue.txt
 queue_2.txt
 treated.txt
+.idea
