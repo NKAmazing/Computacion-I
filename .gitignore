@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+queue.txt
+queue_2.txt
+treated.txt
