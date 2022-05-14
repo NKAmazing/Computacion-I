@@ -31,6 +31,4 @@ class Client:
         self.__id_number = id_number
         return id_number
 
-    # def change_state(self):
-
 
