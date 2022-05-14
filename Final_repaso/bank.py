@@ -1,6 +1,7 @@
 import const
 from clients import Client
 import file
+import time
 
 class Bank:
 
@@ -15,12 +16,6 @@ class Bank:
                 self.queue_list.append(str(client))
                 file.file_operator(self.queue_list)
                 print(self.queue_list)
-            elif client.state == 1:
-                if client in self.queue_list:
-                    self.queue_list.remove(client)
-                    file.file_operator(self.queue_list)
-                self.treated_list.append(str(client))
-                file.file_treated(self.treated_list)
             else:
                 print(const.ERR)
         else:
@@ -28,12 +23,6 @@ class Bank:
                 self.queue_list_2.append(str(client))
                 file.file_operator_2(self.queue_list_2)
                 print(self.queue_list_2)
-            elif client.state == 1:
-                if client in self.queue_list_2:
-                    self.queue_list_2.remove(client)
-                    file.file_operator_2(self.queue_list_2)
-                self.treated_list.append(str(client))
-                file.file_treated(self.treated_list)
             else:
                 print(const.ERR)
 
@@ -51,16 +40,34 @@ class Bank:
         return
 
     def show_cls_treated(self):
-        file.file_clients_treated()
-        return
+        # file.file_clients_treated()
+        # return
+        if len(self.treated_list) != 0:
+            print(self.treated_list)
+        else:
+            print(const.EMPTY_T)
 
     def treat_client(self):
-        client = 0
-        if len(self.queue_list) >= len(self.queue_list_2):
-            for client in range(len(self.queue_list)):
-                print(f"Treating with client {self.queue_list[client]}")
-                # self.queue_list.pop(client)
+        inp = int(input(const.INP_Q))
+        if inp == 1:
+            if len(self.queue_list) != 0:
+                for client in range(len(self.queue_list) - 1, -1, -1):
+                    print(f"Treating with client {self.queue_list[client]}")
+                    time.sleep(1)
+                    self.treated_list.append(self.queue_list[client])
+                    self.queue_list.pop(client)
+                print(self.queue_list)
+            else:
+                print(const.EMPTY_Q)
+        elif inp == 2:
+            if len(self.queue_list_2) != 0:
+                for client in range(len(self.queue_list_2) - 1, -1, -1):
+                    print(f"Treating with client {self.queue_list_2[client]}")
+                    time.sleep(1)
+                    self.treated_list.append(self.queue_list_2[client])
+                    self.queue_list_2.pop(client)    
+                print(self.queue_list_2)
+            else:
+                print(const.EMPTY_Q)
         else:
-            for client in range(len(self.queue_list_2)):
-                print(f"Treating with client {self.queue_list_2[client]}")
-                # self.queue_list.pop(client)
+            print(const.ERR)
