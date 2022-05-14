@@ -17,9 +17,9 @@ PIPPER BANKS Software
 
 OPTIONS:
 
-    a) Add client to queue.
-    b) Watch client's queue.
-    c) Watch client's list already treated.
+    a) Add student to exam table.
+    b) Delete student from exam table.
+    c) Watch exam table.
     d) Attend client.
     e) Load queue in Database.
     f) Exit.
