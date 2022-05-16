@@ -10,6 +10,11 @@ class University:
     def __str__(self):
         return f"Name: {self.name} Address: {self.address} Web: {self.web}"
 
+    def add_career_list(self, career):
+        self.career_list.append(career)
+    
     def show_career_list(self):
         for career in range(len(self.career_list)):
             print(self.career_list[career])
+
+    

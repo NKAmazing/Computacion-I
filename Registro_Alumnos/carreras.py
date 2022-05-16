@@ -11,4 +11,9 @@ class Career:
     def __str__(self):
         return f"Name: {self.name} Description: {self.description} University: {self.university}"
 
-    
+    def add_asign(self, asignature):
+        self.asign_list.append(asignature)
+
+    def show_asign_list(self):
+        for asign in range(len(self.asign_list)):
+            print(self.asign_list[asign])

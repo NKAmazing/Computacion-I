@@ -1,8 +1,10 @@
+import const
 
 class Student:
     
     def __init__(self, name="", lastname="", dni=int, email=""):
-        self.__name = self.set_name(name)
+        # self.__name = self.set_name(name)
+        self.name = name
         self.__lastname = self.set_lastname(lastname)
         self.__dni = self.set_dni(dni)
         self.__email = self.set_email(email)
@@ -10,12 +12,12 @@ class Student:
     def __str__(self):
         return f"Name: {self.__name} Lastname: {self.__lastname} DNI: {self.__dni} Email: {self.__email}"
 
-    def get_name(self):
-        return self.__name
+    # def get_name(self):
+    #     return self.__name
     
-    def set_name(self, name):
-        self.__name = name
-        return name
+    # def set_name(self, name):
+    #     self.__name = name
+    #     return name
 
     def get_lastname(self):
         return self.__lastname
@@ -38,3 +40,13 @@ class Student:
         self.__email = email
         return email
 
+    def dni_validation(self, student):
+        if int(student.__dni) is True:
+            print(const.NOT_INT_DNI)
+            return False
+        # elif len(student.__dni) >= 9:
+        #     print(const.LEN_DNI)
+        #     return False
+        else:
+            print(const.DNI_TRUE)
+            return True
