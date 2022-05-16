@@ -10,7 +10,7 @@ from universidad import *
 from carreras import *
 
 university = University()
-# asign = Asignature()
+asign = Asignature()
 insc = Inscription()
 
 asign_1 = Asignature("Computacion", 12345)

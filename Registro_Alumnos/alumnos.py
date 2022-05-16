@@ -41,7 +41,7 @@ class Student:
         return email
 
     def dni_validation(self, student):
-        if int(student.__dni) is True:
+        if int(student.get_dni()) is True:
             print(const.NOT_INT_DNI)
             return False
         # elif len(student.__dni) >= 9:
